@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, my love!</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: purple;
+        }
+        .container {
+            position: relative;
+            width: 250px;
+            height: 160px;
+            cursor: pointer;
+        }
+        .envelope {
+            width: 100%;
+            height: 100%;
+            background-color: #ffcc00;
+            position: absolute;
+            clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 100%, 0% 100%);
+            transition: transform 0.5s;
+        }
+        .envelope::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background-color: #e6b800;
+            top: 0;
+            clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+        }
+        .message {
+            width: 100%;
+            min-height: 120px;
+            background-color: yellow;
+            color: #000000;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .message button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: rgb(199, 101, 101);
+            color: #000000;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .container.open .envelope {
+            transform: translateY(-80px);
+        }
+        .container.open .message {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" onclick="openMail()">
+        <div class="envelope"></div>
+        <div class="message"><p>
+            Hello love! Happy Valentine's Day. Sorry kung wala akong gift na mai-ibigay sayo so bigay ko nalang yung kaya kong gawin hihi. So ayun paulit-ulit tayo, thank you love kasi nanjan ka palagi para sa akin, not in a sense na dahil lang nanjan yung presence mo, but pinaparamdam mo palagi sa akin na importante ako. Alam kong busy ka love at ayaw mo sana muna mag social life pero na-appreciate ko yung pag-update mo pa rin sa akin kahit na pagod kaaa. Hindi kita kayang bigyan ng flowers na physical so digital muna HAHAHA. I love you so much love, I miss you. Sana matapos na ang busy days natin para makapag-call na ulit tayo. I miss you, your voice, yung kakulitan mo, yung usapan natin, lahat. I love youuu.
+        </p>
+        <a href="Flowers.html"><button>Here is my gift!</button></a>
+        </div>
+    </div>
+
+    <script>
+        function openMail() {
+            document.querySelector('.container').classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
